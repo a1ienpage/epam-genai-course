@@ -1,5 +1,5 @@
 {
-  "report_sha256": "6c380cde51806833ac28a0cad7c1604f8d43f26d1ff79a71722ffc355a174bb4",
+  "report_sha256": "682b93334d5996a577a8d2b17d1d6fa959f2be21b0c4db7dbb85997b92101335",
   "scope": "Only the two body paragraphs of each of the five cases; headings, implementation lists, introduction, and conclusions excluded.",
   "method": "E = paragraphs containing a literal alias (case-insensitive word boundaries); I = additional paragraphs with a documented semantic annotation and no literal alias. Counts have the same unit: paragraphs. I is an AI-assisted interpretation, not an objective word count. Unannotated implicit uses may be missed.",
   "aliases": {
@@ -74,40 +74,40 @@
       "id": "1",
       "title": "1. Software development assistance",
       "paragraphs": [
-        "A developer can give a large language model (LLM) a prompt containing a requirement, relevant source code, and project conventions. The assistant can propose an implementation, explain unfamiliar code, draft unit tests, or suggest a refactoring. An AI agent can also call tools to inspect files and run tests within an approved environment. The business value is less time spent on repetitive implementation and a shorter path from a requirement to a reviewable change. Useful measures include time to an accepted change, reviewer effort, and defects discovered after merging; generating more code alone does not establish productivity.",
-        "Technical challenges include selecting useful context within the context window, understanding project dependencies, and integrating tool calling with the development environment. Weak points include hallucination of nonexistent APIs, insecure code, and tests that repeat an implementation's mistakes. A passing test suite does not establish that the original requirement was met. Engineers should review diffs, run appropriate tests, and restrict tool permissions. Human-in-the-loop approval is particularly useful before deployment or destructive commands. Token consumption and latency also affect whether an assistant is economical for a small task."
+        "A developer can give a large language model (LLM) a prompt with a requirement, relevant source code, and project conventions. The assistant can propose an implementation, explain unfamiliar code, draft unit tests, or suggest a refactoring. An AI agent can also call tools to inspect files and run tests. This can reduce repetitive work and speed up the first draft of a change. Useful measures include time to an accepted change, reviewer effort, and defects discovered after merging.",
+        "The assistant needs useful context within the context window, accurate dependency information, and tool calling integrated with the development environment. Problems include hallucination of nonexistent APIs, insecure code, and tests that repeat an implementation's mistakes. Engineers still need to review diffs, run appropriate tests, and restrict tool permissions. Human-in-the-loop approval is useful before deployment or destructive commands. Token consumption and latency also affect the cost of a task."
       ]
     },
     {
       "id": "2",
       "title": "2. Question answering over organizational documents",
       "paragraphs": [
-        "An employee can ask a question about internal procedures or technical documentation and receive a synthesized answer with references. In a retrieval-augmented generation (RAG) design, a retrieval component finds relevant passages and supplies them to an LLM rather than expecting the model to remember private documents. Documents may be divided through chunking, represented by embeddings, and searched through a vector database, often alongside keyword search. Business value includes faster onboarding, less repeated questioning, and less time searching across multiple systems. A useful pilot measures answer correctness, source support, and the time employees need to find a verified answer.",
-        "Technical challenges include document ingestion, retrieving the right passages, updating indexes, and enforcing access control before private content reaches the model. Grounding can improve answer relevance, but irrelevant retrieval or outdated source material can still produce a confident error. Citations must be checked: a linked document may not support the specific claim. Prompt injection inside retrieved documents is another weakness, because source text can contain instructions intended to redirect the assistant. Source-based evaluation should include unanswerable questions and attempts to obtain documents that the user is not permitted to read."
+        "An employee can ask a question about internal procedures or technical documentation and receive a synthesized answer with references. In retrieval-augmented generation (RAG), a retrieval component finds relevant passages and supplies them to an LLM. Documents may be prepared through chunking, represented by embeddings, and searched through a vector database, often alongside keyword search. This can shorten onboarding and reduce repeated questions to colleagues. A useful pilot measures answer correctness, source support, and the time needed to find a verified answer.",
+        "The difficult parts are importing documents, retrieving the right passages, updating indexes, and enforcing access control before private content reaches the model. Grounding helps, but poor retrieval or outdated documents can still produce a confident error. Citations must be checked against the actual claim. Prompt injection inside retrieved documents can also redirect the assistant. Evaluation should include questions with no answer in the sources and requests for documents the user is not allowed to read."
       ]
     },
     {
       "id": "3",
       "title": "3. Customer support and service automation",
       "paragraphs": [
-        "A customer support assistant can interpret a customer's question and generate a reply using approved help articles. An AI agent may also use an API to retrieve order information or initiate an approved workflow. Business value comes from handling common questions outside working hours, reducing repetitive support work, and giving human specialists more time for difficult cases. Success should be measured through verified resolutions, repeat contacts, customer satisfaction, and the quality of escalation, rather than the number of automated replies.",
-        "Technical challenges include reliable retrieval, multilingual questions, authentication, and safe integration with customer systems. Weak points include invented refund policies, exposure of personal information, and unauthorized actions triggered by prompt injection. Grounding in approved policies helps but does not eliminate hallucination. Access control should be enforced by the application, and important actions should require human-in-the-loop approval. The system also needs a clear handoff when information is missing. Evaluation should test misleading questions, contradictory policies, and cases where the correct response is to escalate. Latency and token costs matter at high conversation volumes."
+        "A support assistant can interpret a customer's question and generate a reply using approved help articles. An AI agent may use an API to retrieve order information or start a service workflow. It can handle common questions outside working hours and leave more time for difficult cases. Success should be measured through resolved issues, repeat contacts, customer satisfaction, and the quality of handoff to a person.",
+        "This requires reliable retrieval, support for different languages, authentication, and integration with customer systems. Risks include invented refund policies, exposure of personal information, and unauthorized actions triggered by prompt injection. Grounding in approved policies reduces some errors but does not eliminate hallucination. The application must enforce access control, with human-in-the-loop approval for important actions. Evaluation should test misleading questions, contradictory policies, and cases that need a human specialist. Latency and token costs matter at high conversation volumes."
       ]
     },
     {
       "id": "4",
       "title": "4. Marketing images and design exploration",
       "paragraphs": [
-        "A design team can use a text prompt and reference images to produce concept art, campaign illustrations, or variations of a visual. Text-to-image generation gives a team several alternatives before it invests in detailed production. Multimodal systems may accept both text and images to guide the result. The business value is faster concept exploration and cheaper iteration on early drafts; it does not automatically eliminate the need for a designer. Useful measures include the proportion of drafts accepted by reviewers, time to an approved asset, and the amount of manual editing required.",
-        "Technical challenges include following detailed constraints, maintaining a consistent brand or character, and producing suitable dimensions and layouts. Weak points include malformed objects, misleading depictions, inconsistent versions, and poor rendering of exact text. Results may also require review for rights, permitted use, and resemblance to existing work; a generated asset is not automatically suitable for commercial publication. Human-in-the-loop review should check visual quality and brand suitability before release. Evaluation should compare several attempts because one successful sample does not demonstrate repeatability, and generation costs increase when many attempts are rejected."
+        "A design team can use a text prompt and reference images to produce concept art, campaign illustrations, or variations of a visual. Multimodal systems can use both text and images as input. This gives the team several options before detailed production begins, reducing time spent on early drafts. Useful measures include drafts accepted by reviewers, time to an approved asset, and the amount of manual editing required.",
+        "It can be difficult to follow detailed constraints, keep a character or brand consistent, and produce the right layout. Common problems include malformed objects and poor rendering of exact text. A reviewer should also check whether a generated asset is suitable for the intended use and resembles existing work. Human-in-the-loop review covers visual quality and brand requirements. Evaluation should compare several attempts, since repeated failures increase both editing time and generation costs."
       ]
     },
     {
       "id": "5",
       "title": "5. Meeting summaries and follow-up drafts",
       "paragraphs": [
-        "A meeting assistant can convert speech to a transcript, then use an LLM to produce a summary, decisions, and action items. This is a multimodal workflow when audio processing and text generation are combined; speech recognition itself is only one part of the application. Business value includes reducing time spent writing notes and helping absent participants catch up. Useful outputs separate confirmed decisions from proposals and attach evidence or timestamps where available. A pilot can measure corrections per summary, missed decisions, and time saved after participants review the notes.",
-        "Technical challenges include background noise, overlapping speakers, speaker attribution, domain terminology, and long conversations that exceed a context window. Weak points include assigning a task to the wrong person, removing an important qualification, or inventing a deadline. The system should mark an unstated owner or date as unknown instead of filling it in. Recording also requires appropriate participant permission and careful access control. Human-in-the-loop confirmation is useful before notes become official commitments or tasks are sent to other systems through an API. Evaluation should compare summaries with the recording and verify both omissions and unsupported additions."
+        "A meeting assistant can transcribe speech and use an LLM to produce a summary, decisions, and action items. This is a multimodal workflow combining audio processing and text generation. It can reduce note-taking work and help absent participants catch up. Useful notes separate decisions from proposals and attach evidence or timestamps. A pilot can measure corrections, missed decisions, and time saved after participants review the notes.",
+        "Background noise, overlapping speakers, technical terms, and long conversations that exceed a context window all make the task harder. Errors include assigning work to the wrong person, losing an important qualification, or inventing a deadline. An unstated owner or date should remain unknown. Recording requires appropriate participant permission and access control. Human-in-the-loop confirmation is useful before notes become commitments or tasks are sent to other systems through an API. Evaluation should compare summaries with the recording and check for missing or invented details."
       ]
     }
   ],
@@ -2027,7 +2027,7 @@
       "case": "2",
       "explicit_occurrences": 1,
       "explicit_matches": [
-        "evaluation"
+        "Evaluation"
       ],
       "explicit": 1,
       "implicit": 0,
