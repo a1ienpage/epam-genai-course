@@ -1,0 +1,15 @@
+# EPAM — Generative AI for Software Development
+
+Course assignments and learning materials created for the Generative AI for Software Development learning path.
+
+Author: Aliaskar Avgust
+
+## Module 01 — Course Introduction
+
+- [Research on Generative AI applications](module-01/research.md): five application cases, business value, technical challenges, weak points, and existing implementations with official links.
+- [Generative AI vocabulary](module-01/vocabulary.md): 20 terms connected to the research.
+- [Resource access check](module-01/resource-access.md): confirmed access and outstanding VPN-related checks.
+
+## Preparation method
+
+The introductory report and vocabulary were drafted with AI assistance using public product documentation. They are not represented as manually authored definitions, independently benchmarked product claims, or evidence of account access. Personal account verification and university submission are separate steps.
