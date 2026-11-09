@@ -14,4 +14,4 @@ Author: Aliaskar Avgust
 
 ## Preparation method
 
-AI helped with research drafting and graph generation. I supplied the Russian definitions of Prompt, Token, Hallucination, RAG, and AI agent; these were edited for clarity. Product descriptions are based on the linked documentation, not hands-on benchmarks.
+AI helped with research drafting and graph generation. I supplied the definitions of Prompt, Token, Hallucination, RAG, and AI agent; these were translated into English and edited for clarity. Product descriptions are based on the linked documentation, not hands-on benchmarks.
